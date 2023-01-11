@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PosSystem.Common.Exceptions
 {
+    /// <summary>
+    /// Exception class to throw when payment is incomplete
+    /// </summary>
     public class IncompletePaymentPosException : Exception
     {
         public double ToPayAmount { get; init; }

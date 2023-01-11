@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PosSystem.Common.Exceptions
 {
+    /// <summary>
+    /// Base Pos System excaption
+    /// </summary>
     public class PosException : Exception
     {
         public PosException()
