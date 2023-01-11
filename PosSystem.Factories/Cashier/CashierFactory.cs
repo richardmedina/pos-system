@@ -1,5 +1,6 @@
 ﻿using PosSystem.Common.Dto.Cashier;
 using PosSystem.Common.Enums;
+using PosSystem.Common.Exceptions;
 using PosSystem.Common.Factories;
 using PosSystem.Common.Services;
 using PosSystem.Services;
@@ -50,6 +51,8 @@ namespace PosSystem.Factories.Cashier
         }
         public ICashierService CreateInstance(CountryType countryType)
         {
+            if (globalConfigs.ContainsKey(countryType)) throw new CountryNotFoundPosException("Country configuration not found");
+
             return new CashierService(globalConfigs[countryType]);
         
         }
